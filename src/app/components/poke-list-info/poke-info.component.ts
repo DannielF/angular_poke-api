@@ -9,6 +9,13 @@ import { PokeService } from 'src/app/services/poke.service';
   templateUrl: './poke-info.component.html',
   styleUrls: ['./poke-info.component.scss'],
 })
+
+/**
+ * PokeInfoComponent is the component that shows all the pokemons.
+ * @author Daniel Granados
+ * @version 0.0.1
+ * @since 0.0.1
+ */
 export class PokeInfoComponent implements OnInit {
   pokemons: ResponseAllPokemons = {
     count: 0,
@@ -29,10 +36,17 @@ export class PokeInfoComponent implements OnInit {
     });
   }
 
+  /**
+   * Toggle the poke details.
+   */
   togglePokeDetails() {
     this.pokeDetails = !this.pokeDetails;
   }
 
+  /**
+   * Get the details of a pokemon by its id.
+   * @param id number
+   */
   getPokemonDetails(id: number) {
     this.pokeService.getPokemon(id).subscribe((data) => {
       this.pokemonChosen = data;
@@ -40,6 +54,9 @@ export class PokeInfoComponent implements OnInit {
     this.togglePokeDetails();
   }
 
+  /**
+   * Show the next page of pokemons.
+   */
   loadMorePokemons() {
     this.pokeService.getPokemons(this.limit, this.offset).subscribe((data) => {
       this.pokemons.results = [...this.pokemons.results, ...data.results];

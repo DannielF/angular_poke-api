@@ -6,6 +6,13 @@ import { ResponsePokemonForm } from 'src/app/models/responsePokemonForm.model';
   templateUrl: './poke-details.component.html',
   styleUrls: ['./poke-details.component.scss'],
 })
+
+/**
+ * PokeDetailsComponent is the component that shows the details of a pokemon given its id.
+ * @author Daniel Granados
+ * @version 0.0.1
+ * @since 0.0.1
+ */
 export class PokeDetailsComponent implements OnInit {
   @Input() pokemon: ResponsePokemonForm = {
     form_name: '',
