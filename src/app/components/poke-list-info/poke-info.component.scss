@@ -14,6 +14,10 @@
   & p {
     font-size: 2rem;
   }
+
+  & button {
+    cursor: pointer;
+  }
 }
 
 .poke-details {
@@ -38,4 +42,13 @@
     border-radius: 4rem;
     margin-inline: auto;
   }
+}
+
+.button-loadMore {
+  width: 20%;
+  padding: 0.5rem 0;
+  border-radius: 4rem;
+  margin-inline: auto;
+  margin-block-end: 5rem;
+  font-size: 1.6rem;
 }
