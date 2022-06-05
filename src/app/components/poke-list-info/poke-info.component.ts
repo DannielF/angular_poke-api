@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ResponseAllPokemons } from 'src/app/models/responseAllPokemons.model';
+import { ResponsePokemonForm } from 'src/app/models/responsePokemonForm.model';
 import { PokeService } from 'src/app/services/poke.service';
 
 @Component({
@@ -15,6 +16,8 @@ export class PokeInfoComponent implements OnInit {
     previous: '',
     results: [],
   };
+  pokeDetails: boolean = false;
+  pokemonChosen!: ResponsePokemonForm;
 
   constructor(private pokeService: PokeService) {}
 
@@ -22,5 +25,16 @@ export class PokeInfoComponent implements OnInit {
     this.pokeService.getPokemons().subscribe((data) => {
       this.pokemons = data;
     });
+  }
+
+  togglePokeDetails() {
+    this.pokeDetails = !this.pokeDetails;
+  }
+
+  getPokemonDetails(id: number) {
+    this.pokeService.getPokemon(id).subscribe((data) => {
+      this.pokemonChosen = data;
+    });
+    this.togglePokeDetails();
   }
 }

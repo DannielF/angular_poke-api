@@ -8,7 +8,14 @@
         }}.png"
         alt="poke-sprite"
       />
-      <p>{{ poke.name | titlecase }}</p>
+      <div>
+        <p>{{ poke.name | titlecase }}</p>
+        <button (click)="getPokemonDetails(i + 1)">Show details</button>
+      </div>
     </mat-grid-tile>
   </mat-grid-list>
+  <div class="poke-details" *ngIf="pokemonChosen" [class.active]="pokeDetails">
+    <poke-poke-details [pokemon]="pokemonChosen"></poke-poke-details>
+    <button (click)="togglePokeDetails()">Close</button>
+  </div>
 </div>
