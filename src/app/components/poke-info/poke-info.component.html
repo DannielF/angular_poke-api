@@ -1,1 +1,8 @@
-<p>poke-info works!</p>
+<div class="list-pokeNames">
+  <h2>List of pokemons</h2>
+  <ul>
+    <li *ngFor="let poke of pokemons.results; let i = index">
+      {{ poke.name }} - {{ i }}
+    </li>
+  </ul>
+</div>

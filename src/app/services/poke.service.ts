@@ -9,7 +9,7 @@ import { ResponsePokemonForm } from '../models/responsePokemonForm.model';
   providedIn: 'root',
 })
 export class PokeService {
-  private apiUrl = `${environment.API_URL}`;
+  private apiUrl = environment.API_URL;
 
   constructor(private http: HttpClient) {}
 
