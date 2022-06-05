@@ -18,6 +18,8 @@ export class PokeInfoComponent implements OnInit {
   };
   pokeDetails: boolean = false;
   pokemonChosen!: ResponsePokemonForm;
+  limit: number = 20;
+  offset: number = 20;
 
   constructor(private pokeService: PokeService) {}
 
@@ -36,5 +38,12 @@ export class PokeInfoComponent implements OnInit {
       this.pokemonChosen = data;
     });
     this.togglePokeDetails();
+  }
+
+  loadMorePokemons() {
+    this.pokeService.getPokemons(this.limit, this.offset).subscribe((data) => {
+      this.pokemons.results = [...this.pokemons.results, ...data.results];
+    });
+    this.offset += this.limit;
   }
 }
