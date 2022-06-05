@@ -1,3 +1,6 @@
+![](./src/assets/images/list.png)
+![](./src/assets/images/list-details.png)
+
 # AngularPokeApi
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
