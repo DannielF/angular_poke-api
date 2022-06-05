@@ -25,10 +25,17 @@
   background: white;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   transition: all ease-out 0.5s;
   transform: translateX(100%);
   &.active {
     transform: translateX(0);
+  }
+
+  .button-close {
+    width: 80%;
+    padding: 0.5rem 0;
+    border-radius: 4rem;
+    margin-inline: auto;
   }
 }

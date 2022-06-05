@@ -1,0 +1,25 @@
+.poke-details {
+  display: flex;
+  flex-direction: column;
+
+  & h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-block-start: 2rem;
+    border-bottom: dashed 1px black;
+  }
+
+  & p {
+    font-size: 1.5rem;
+  }
+
+  & li {
+    list-style: none;
+  }
+
+  .title--bg {
+    background-color: #f98b1f;
+    padding: 1rem 1rem;
+    border-radius: 3rem;
+  }
+}
