@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { ResponseAllPokemons } from 'src/app/models/responseAllPokemons.model';
 import { PokeService } from 'src/app/services/poke.service';
 
