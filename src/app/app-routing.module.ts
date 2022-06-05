@@ -6,6 +6,10 @@ import { PokeInfoComponent } from './components/poke-list-info/poke-info.compone
 
 const routes: Routes = [
   {
+    path: '',
+    component: HomeComponent
+  },
+  {
     path: 'home',
     component: HomeComponent,
   },
